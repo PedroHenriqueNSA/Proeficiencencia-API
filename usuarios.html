@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+    <link rel="stylesheet" href="style2.css">
+    
+</head>
+<body>
+
+<div class="container">
+    <h2>Lista de Usuários</h2>
+    <button id="toggleButton" class="rounded-button">Mostrar Usuários</button>
+    <table id="userTable" class="hide">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Empresa</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Senha</th>
+        </tr>
+        <script>
+            var usuarios = [
+                {
+                    'id': 1,
+                    'nome':'Pedro Henrique',
+                    'empresa': 'Sony',
+                    'telefone': '12345678',
+                    'email': 'pedro.santos14@estudante.ifb.edu.br',
+                    'senha': '12345678'
+                },
+                {
+                    'id': 2,
+                    'nome':'Otavio Davilla',
+                    'empresa': 'Sony',
+                    'telefone': '12345678',
+                    'email': 'otavio@gmail.com',
+                    'senha': '12345678'
+                },
+                {
+                    'id': 3,
+                    'nome':'Pedro de Carvalho',
+                    'empresa': 'Sony',
+                    'telefone': '12345678',
+                    'email': 'pedro@gmail.com',
+                    'senha': '12345678'
+                }
+            ];
+            
+            for (var i = 0; i < usuarios.length; i++) {
+                document.write("<tr>");
+                document.write("<td>" + usuarios[i].id + "</td>");
+                document.write("<td>" + usuarios[i].nome + "</td>");
+                document.write("<td>" + usuarios[i].empresa + "</td>");
+                document.write("<td>" + usuarios[i].telefone + "</td>");
+                document.write("<td>" + usuarios[i].email + "</td>");
+                document.write("<td>" + usuarios[i].senha + "</td>");
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</div>
+
+<script>
+    document.getElementById('toggleButton').addEventListener('click', function() {
+        var table = document.getElementById('userTable');
+        if (table.classList.contains('hide')) {
+            table.classList.remove('hide');
+            document.getElementById('toggleButton').textContent = 'Ocultar Usuários';
+        } else {
+            table.classList.add('hide');
+            document.getElementById('toggleButton').textContent = 'Mostrar Usuários';
+        }
+    });
+</script>
+
+<a href="perfil.html" class="button">Ver Usuário</a>
+</body>
+</html>
